@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://chmkfv7bd40bg"]
+
+[ext_resource type="Script" uid="uid://clda250dlu4js" path="res://Scripts/resizableBlock.gd" id="1_wjxkk"]
+[ext_resource type="Texture2D" uid="uid://buc3ylnce83rr" path="res://icon.svg" id="2_242ym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmypi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjpmq"]
+radius = 2.0
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1215618856]
+script = ExtResource("1_wjxkk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1258445066]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("2_242ym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1317010547]
+shape = SubResource("RectangleShape2D_cmypi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1969427004]
+position = Vector2(10, 10)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=505088146]
+scale = Vector2(0.021, 0.021)
+texture = ExtResource("2_242ym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1879422303]
+shape = SubResource("CircleShape2D_bjpmq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=986115060]
