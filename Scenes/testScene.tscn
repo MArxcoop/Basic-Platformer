@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b1n18t574ei62"]
+
+[ext_resource type="PackedScene" uid="uid://chmkfv7bd40bg" path="res://Scenes/resizableBlock.tscn" id="1_2atia"]
+[ext_resource type="PackedScene" uid="uid://ls7n3ufoyf3d" path="res://Scenes/player.tscn" id="2_vixnb"]
+
+[node name="Node2D" type="Node2D" unique_id=1642167521]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=228317939]
+zoom = Vector2(0.5, 0.5)
+
+[node name="AnimatableBody2D2" parent="." unique_id=107750348 instance=ExtResource("1_2atia")]
+position = Vector2(500, -188)
+
+[node name="AnimatableBody2D" parent="." unique_id=1139117048 instance=ExtResource("1_2atia")]
+position = Vector2(-824, 64)
+
+[node name="AnimatableBody2D3" parent="." unique_id=2131195167 instance=ExtResource("1_2atia")]
+position = Vector2(5, 64)
+
+[node name="Player" parent="." unique_id=55894953 instance=ExtResource("2_vixnb")]
+position = Vector2(0, -99)
+scale = Vector2(0.5, 0.5)
