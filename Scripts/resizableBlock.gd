@@ -4,6 +4,10 @@ var is_selected = false
 #Variables for scaling the box
 var x = 1
 var y = 1
+var min_size = .5
+var increment = .25
+var target_size = Vector2(x, y)
+var scale_speed = 10
 
 #The check to select the box
 func _input_event(_viewport, event, _shape_idx):
@@ -22,7 +26,6 @@ func select_box():
 	is_selected = true
 	modulate = Color(0.0, 0.4, 1.0, 1.0)
 	print("Box Selected")
-
 #Labels the box as deselected and reverts the color
 func deselect_box():
 	is_selected = false
@@ -35,19 +38,22 @@ func _input(event):
 		if event is InputEventKey and event.pressed:
 			if event.keycode == KEY_Q:
 				if event.shift_pressed:
-					if y > 1:
-						y -= 1
+					if y > min_size:
+						y -= increment
 					print("y down")
 				else:
-					y += 1
+					y += increment
 					print("y up")
 		if event is InputEventKey and event.pressed:
 			if event.keycode == KEY_E:
 				if event.shift_pressed:
-					if x > 1:
-						x -= 1
+					if x > min_size:
+						x -= increment
 					print("x down")
 				else:
-					x += 1
+					x += increment
 					print("x up")
-	scale = Vector2(x, y)
+
+func _physics_process(delta):
+	target_size = Vector2(x, y)
+	scale = scale.lerp(target_size, scale_speed * delta)
