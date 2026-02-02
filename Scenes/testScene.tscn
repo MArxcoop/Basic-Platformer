@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D" unique_id=1642167521]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=228317939]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(2.335, 2.335)
 
 [node name="AnimatableBody2D2" parent="." unique_id=107750348 instance=ExtResource("1_2atia")]
 position = Vector2(500, -188)
